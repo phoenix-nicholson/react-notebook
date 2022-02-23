@@ -5,18 +5,20 @@ import { useUser } from '../../context/UserContext';
 // screen if you're not yet authenticated.
 export default function PrivateRoute({ children, ...rest }) {
   // TODO: Use the user in context to determine whether to redirect to /login
-  const { user } = useUser();
+  const {
+    user: { email },
+  } = useUser();
 
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        user.email ? (
+        email ? (
           children
         ) : (
           <Redirect
             to={{
-              pathname: '/Auth',
+              pathname: '/login',
               state: { from: location },
             }}
           />
