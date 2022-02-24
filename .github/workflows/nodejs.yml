@@ -17,4 +17,6 @@ jobs:
       env:
       SUPABASE_URL: ${{secrets.SUPABASE_URL}}
           SUPABASE_KEY: ${{secrets.SUPABASE_KEY}}
+          REACT_APP_SUPABASE_PASSWORD: ${{secrets.REACT_APP_SUPABASE_PASSWORD}}
+          REACT_APP_SUPABASE_EMAIL: ${{secrets.REACT_APP_SUPABASE_EMAIL}}
         CI: true
